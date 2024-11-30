@@ -5,6 +5,8 @@ from rich.console import Console
 
 from scenarios.common.chat_app import ChatMLApp
 
+from ProjectTools.safesend import SafeSend, ChatLock
+
 
 class Scenario:
     name = "Scenario"
@@ -76,6 +78,12 @@ class ChatMLAppScenario(Scenario, ABC):
 
     def prompt_user(self, prompt: str, default: str) -> str:
         if self.interactive:
-            return self.app.ask(Prompt.ask(prompt, default=default))
+            oldLock = ChatLock()
+            userInput = Prompt.ask(prompt, default=default)
+            print("User Input:", userInput)
+            safer_UserInput, newLock = SafeSend.makeSafe(oldLock, userInput)
+            print("Safer User Input:", safer_UserInput)
+            oldLock = newLock
+            return self.app.ask(safer_UserInput)
         else:
             return self.app.ask(default)
