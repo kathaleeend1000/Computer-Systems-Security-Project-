@@ -44,3 +44,4 @@ class SpreadGPT4(ChatMLAppScenario):
 
 if __name__ == "__main__":
     SpreadGPT4(verbose=True).run()
+# save
