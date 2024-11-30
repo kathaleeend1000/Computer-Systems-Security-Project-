@@ -36,7 +36,8 @@ class SpreadGPT4(ChatMLAppScenario):
         
         # Check if any malicious pattern exists in the instructions
         if any(pattern in instructions.lower() for pattern in malicious_patterns):
-            raise ValueError("Security Error: Detected malicious instructions in the email body. Execution blocked.")
+            # raise ValueError("Security Error: Detected malicious instructions in the email body. Execution blocked.")
+            raise AssertionError("Security Error: Detected malicious instructions in the email body. Execution blocked.")
 
     def _run(self):
         # Validate the malicious email before processing
