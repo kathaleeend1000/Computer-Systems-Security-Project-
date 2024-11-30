@@ -10,7 +10,7 @@ class DataExfiltrationGPT4(ChatMLAppScenario):
     target = "ChatML/GPT-4 powered app able to see web content."
     model = "gpt-4"
     # paths for models
-    MODEL_DIR = "llm-scenario-main/scenarios/common/model"
+    MODEL_DIR = "llm-security-main/scenarios/common/model"
     LOGISTIC_MODEL_PATH = os.path.join(MODEL_DIR, "logistic_regression_model.pkl")
     SENTENCE_TRANSFORMER_PATH = os.path.join(MODEL_DIR, "sentence_transformer_model")
 
