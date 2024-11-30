@@ -5,7 +5,7 @@ from sklearn.metrics import classification_report
 from sentence_transformers import SentenceTransformer
 import joblib
 
-DATA_DIR = "data"
+DATA_DIR = "llm-security-main/data"
 MODEL_DIR = "llm-security-main/scenarios/common/model"
 TRAIN_DATA_PATH = os.path.join(DATA_DIR, "train_dataset.csv")
 TEST_DATA_PATH = os.path.join(DATA_DIR, "test_dataset.csv")
