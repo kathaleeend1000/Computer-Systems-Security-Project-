@@ -39,6 +39,9 @@ python llm-security-main/scenarios/common/model/train.py
 ## **Running the Project**  
 After installing the dependencies and training the model, you can explore various scenarios and functionalities of the project.
 
+## Multi-Stage Prompt Injection  (Scenario 1)
+In the multi-stage scenario, we added tools to try to lock and validate the difference between a real user prompt and a maliciously injected prompt in order to protect the user and the app from attackers. Under /ProjectTools we added safesend.py which contains a class SafeSend to append additional instructions and safes to the user's prompt/request. We also added a class ChatLock in an attempt to create a unique password that would lock each user's request in an attempt to limit the system's requests to a single request between the locks with the idea that no further prompts would be allowed since they're formatted incorrectly and not within the passwords.
+
  ## Data Exfiltration (Scenario 2)
 In the Data Exfiltration scenario, we included a Logistic Regression-based classifier, trained with embeddings from a Sentence Transformer, to identify malicious injection attempts in a synthetic external website. The application supports dynamic analysis of website content triggering scenario failures when injections are detected. The model is trained to distinguish between safe and injection-prone text with high sensitivity and allows customizable thresholds for classification. The detection framework works effectively for the provided datasets and predefined scenarios, but it may require further tuning or retraining for more complex injection patterns using larger dataset.
 
