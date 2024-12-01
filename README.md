@@ -39,6 +39,8 @@ python llm-security-main/scenarios/common/model/train.py
 ## **Running the Project**  
 After installing the dependencies and training the model, you can explore various scenarios and functionalities of the project.
 
+The final version includes a Logistic Regression-based classifier in the second scenario, trained with embeddings from a Sentence Transformer, to identify malicious injection attempts in a syntetic external website. The application supports dynamic analysis of website content triggering scenario failures when injections are detected. The model is trained to distinguish between safe and injection-prone text with high sensitivity and allows customizable thresholds for classification. The detection framework works effectively for the provided datasets and predefined scenarios, but it may require further tuning or retraining for more complex injection patterns using larger dataset.
+
 ---
 
 ## **Citation**  
