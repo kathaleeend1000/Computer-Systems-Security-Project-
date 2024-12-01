@@ -41,6 +41,8 @@ After installing the dependencies and training the model, you can explore variou
 
 The final version includes a Logistic Regression-based classifier in the second scenario, trained with embeddings from a Sentence Transformer, to identify malicious injection attempts in a syntetic external website. The application supports dynamic analysis of website content triggering scenario failures when injections are detected. The model is trained to distinguish between safe and injection-prone text with high sensitivity and allows customizable thresholds for classification. The detection framework works effectively for the provided datasets and predefined scenarios, but it may require further tuning or retraining for more complex injection patterns using larger dataset.
 
+Discovering Language Model Behaviors with Model-Written Evaluations (Perez et al., 2022) serves as the foundational bedrock for the current study, which provides insights into early vulnerabilities in prompt-based language model interactions. Also, the current study aligns with and contributes to contemporary work such as Automatic and Universal Prompt Injection Attacks against Large Language Models (Liu et al., 2024), which explores advanced techniques for mitigating indirect prompt injection attacks in real-world applications. 
+
 ---
 
 ## **Citation**  
