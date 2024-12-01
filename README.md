@@ -39,8 +39,14 @@ python llm-security-main/scenarios/common/model/train.py
 ## **Running the Project**  
 After installing the dependencies and training the model, you can explore various scenarios and functionalities of the project.
 
-The final version includes a Logistic Regression-based classifier in the second scenario, trained with embeddings from a Sentence Transformer, to identify malicious injection attempts in a syntetic external website. The application supports dynamic analysis of website content triggering scenario failures when injections are detected. The model is trained to distinguish between safe and injection-prone text with high sensitivity and allows customizable thresholds for classification. The detection framework works effectively for the provided datasets and predefined scenarios, but it may require further tuning or retraining for more complex injection patterns using larger dataset.
+ ## Data Exfiltration (Scenario 2)
+In the Data Exfiltration scenario, we included a Logistic Regression-based classifier, trained with embeddings from a Sentence Transformer, to identify malicious injection attempts in a synthetic external website. The application supports dynamic analysis of website content triggering scenario failures when injections are detected. The model is trained to distinguish between safe and injection-prone text with high sensitivity and allows customizable thresholds for classification. The detection framework works effectively for the provided datasets and predefined scenarios, but it may require further tuning or retraining for more complex injection patterns using larger dataset.
 
+
+## Spread Infection to other users (Scenario 4)
+In the file spread.py, the `validate_instructions` function is designed to detect malicious content in an email by scanning for predefined harmful patterns, such as commands to create new emails or send messages to all contacts. If such patterns are found, it raises an error to block further processing, ensuring security. The `_run` function orchestrates the simulation by first validating the email using `validate_instructions`. If the email is flagged as malicious, it stops execution and prevents the malicious email from spreading. Otherwise, it sets up email data, prompts the user for interaction, and ensures no emails are sent, demonstrating the effectiveness of the defensive mechanism.
+
+## **References to scholarly papers:**
 Discovering Language Model Behaviors with Model-Written Evaluations (Perez et al., 2022) serves as the foundational bedrock for the current study, which provides insights into early vulnerabilities in prompt-based language model interactions. Also, the current study aligns with and contributes to contemporary work such as Automatic and Universal Prompt Injection Attacks against Large Language Models (Liu et al., 2024), which explores advanced techniques for mitigating indirect prompt injection attacks in real-world applications. 
 
 ---
